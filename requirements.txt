@@ -1,0 +1,11 @@
+pip~=21.1.1
+uuid~=1.30
+lxml~=4.6.3
+setuptools~=56.2.0
+Werkzeug~=2.0.0
+Flask~=2.0.0
+SQLAlchemy~=1.4.15
+beautifulsoup4~=4.9.3
+cssutils~=2.2.0
+PyYAML~=5.4.1
+Markdown~=3.3.4
