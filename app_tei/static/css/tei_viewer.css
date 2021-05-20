@@ -1,0 +1,86 @@
+
+
+/*          Main parts          */
+
+header {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+main {
+	min-height: calc(100vh - 80px);
+}
+
+footer {
+  overflow: hidden;
+  background-color: #f1f6f9;
+  color:  #9ba4b4 !important;
+}
+
+
+/*          Nav bar          */
+
+.navbar-brand {
+	color:  #9ba4b4 !important;
+  font-size: 1.8rem !important;
+}
+
+.sidebar {
+  /*border: 3px solid black;*/
+  /*padding: 15px;*/
+  /*background-color: #fff;*/
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 25vh;
+}
+/*          Links          */
+
+nav > a:hover {
+  background: #f1f6f9;
+  border-radius: 700px;
+}
+
+footer > a {
+	color:  #9ba4b4 !important;
+}
+
+button > a {
+  color:  #f1f6f9 !important;
+}
+
+
+a {
+	text-decoration: none;
+  color:  #000000 !important;
+}
+
+
+
+.start-item {
+  /*background-color: #9ba4b4;*/
+  font-weight: bold;
+  color: #14274e !important;
+}
+
+
+/*.badge {
+  background-color: #394867 !important;
+}*/
+
+#search-btn {
+  background-color: #394867 !important;
+  outline-color: #af6b58 !important;
+  margin-top: 1rem  !important;
+}
+
+.search-btn {
+  background-color: #394867 !important;
+  outline-color: #af6b58 !important;
+  margin-top: 1rem  !important;
+  border-radius: 700px;
+}
+
+#nav-tabContent {
+  overflow-y: scroll; 
+  height: calc(100vh - 90px);
+}

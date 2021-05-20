@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ page_name }} {% endblock %}
+
+{% block content %}
+
+	<div class="container-fluid my-5">
+		<div class="row">
+			<div class="col-sm-4">
+				
+				<form id="search-form">
+					<h4 class="mb-3" id="filter-title">Filters</h4>
+					<!-- <div class="form-group mb-4">
+						<h4 class="mb-3" id="filter-title">Filters</h4>
+						<label for="order-by">Sort by</label>
+						<select id="order-by" class="form-control" name="filter">
+							<option value="" selected>Not selected</option>
+						  	{% for option in filter_options %}
+		      				{{ option | safe }}
+		      				{% endfor %}
+						</select>
+					</div> -->
+					<div class="form-group mb-4">
+						<label for="select-author">Author</label>
+						<select id="select-author" class="form-control" name="author">
+							<option value="" selected>Not selected</option>
+						  	{% for author in authors %}
+		      				{{ author | safe }}
+		      				{% endfor %}
+						</select>
+					</div>
+					<div class="form-group mb-4">
+						<label for="select-title">Title</label>
+						<input id="select-title" type="text" class="form-control" name="title" placeholder="Title">
+					</div>
+					<button type="submit" id="search-btn" class="btn btn-search text-light">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+						  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+						</svg>
+						Search
+					</button>
+				</form>
+
+
+			</div>
+			<div class="col">
+				<div class="container mb-3" id="search-description"> 
+		      		<h4 id="search-title">Search results</h4>
+		      		<p>Some text</p>
+		      	</div>
+		      	<div class="container" id="document-examples">
+		      		<ol class="list-group list-group-numbered" id="list-document-examples">
+					</ol>
+		      	</div>
+			</div>
+		</div>
+	</div>
+		
+
+{% endblock %}

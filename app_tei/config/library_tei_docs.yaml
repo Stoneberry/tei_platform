@@ -1,0 +1,63 @@
+
+PATHS:
+  library: "../library"
+  library_templates: "../../library"
+  library_static: "../../../library"
+  templates: "templates"
+  static: "static/docs"
+  dbname: "library.db"
+
+METAINFO_TAGS:
+  - ['fileDesc', 'titleStmt', 'title', False]
+  - ['fileDesc', 'publicationStmt', 'date', False]
+  - ['fileDesc', 'titleStmt', 'author', True]
+  - ['profileDesc', 'langUsage', True]
+  - ['profileDesc', 'creation', 'date', False]
+
+SQL_QUERIES:
+  insert_document: >
+      INSERT INTO documents(title, publication_date,
+      language, creation_date, inner_id_author, inner_id_document,
+      filename, html_format, xml_format, docx_format, content)
+      SELECT '{}', '{}', '{}', '{}', '{}', '{}', '{}', {}, {}, {}, '{}'
+      WHERE NOT EXISTS
+      (SELECT * FROM documents
+      WHERE title = '{}' AND publication_date = '{}'
+      AND language = '{}' AND creation_date = '{}'
+      AND inner_id_author = '{}' AND inner_id_document = '{}'
+      AND filename = '{}' AND html_format = {}
+      AND xml_format = {} AND docx_format = {}
+      AND content = '{}');
+  insert_author: >
+      INSERT INTO authors(author_name, inner_id_author)
+      SELECT '{}', '{}'
+      WHERE NOT EXISTS
+      (SELECT * FROM authors
+      WHERE author_name = '{}'
+      AND inner_id_author = '{}');
+  create_documents: >
+      CREATE TABLE authors (id_author integer PRIMARY KEY,
+      inner_id_author text, id_author_wiki text,
+      author_name text,  birthday text,
+      deathday text, description text);
+  create_authors: >
+      CREATE TABLE documents (id_document integer PRIMARY KEY,
+      inner_id_document text, id_document_wiki  text,
+      title text, filename text, genre text,
+      language text, publication_date text,
+      creation_date text, description text,
+      html_format integer, docx_format integer,
+      xml_format integer, inner_id_author text, content text);
+  drop_documents: >
+      DROP TABLE IF EXISTS documents;
+  drop_authors: >
+    DROP TABLE IF EXISTS authors;
+
+DB_COLUMNS:
+  document: ['titleStmt_title', 'publicationStmt_date',
+               'profileDesc_langUsage', 'creation_date',
+               'inner_id_author', 'inner_id_document', 'filename',
+               'html_format', 'xml_format', 'docx_format', 'content']
+  author: ['titleStmt_author', 'inner_id_author']
+
+

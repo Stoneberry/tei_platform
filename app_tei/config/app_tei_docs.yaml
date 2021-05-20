@@ -1,0 +1,9 @@
+
+PATHS:
+  page_content: "../page_content/about.md"
+
+FORMATS:
+  - 'docx'
+  - 'html'
+  - 'xml'
+
