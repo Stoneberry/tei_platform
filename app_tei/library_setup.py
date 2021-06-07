@@ -1,4 +1,4 @@
-from app_tei.library import LibraryDB
+from library import LibraryDB
 
 
 if __name__ == '__main__':
