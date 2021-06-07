@@ -10,16 +10,6 @@
 				
 				<form id="search-form">
 					<h4 class="mb-3" id="filter-title">Filters</h4>
-					<!-- <div class="form-group mb-4">
-						<h4 class="mb-3" id="filter-title">Filters</h4>
-						<label for="order-by">Sort by</label>
-						<select id="order-by" class="form-control" name="filter">
-							<option value="" selected>Not selected</option>
-						  	{% for option in filter_options %}
-		      				{{ option | safe }}
-		      				{% endfor %}
-						</select>
-					</div> -->
 					<div class="form-group mb-4">
 						<label for="select-author">Author</label>
 						<select id="select-author" class="form-control" name="author">
@@ -31,7 +21,7 @@
 					</div>
 					<div class="form-group mb-4">
 						<label for="select-title">Title</label>
-						<input id="select-title" type="text" class="form-control" name="title" placeholder="Title">
+						<input id="select-title" value="" type="text" class="form-control" name="title" placeholder="Title">
 					</div>
 					<button type="submit" id="search-btn" class="btn btn-search text-light">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -40,9 +30,8 @@
 						Search
 					</button>
 				</form>
-
-
 			</div>
+			
 			<div class="col">
 				<div class="container mb-3" id="search-description"> 
 		      		<h4 id="search-title">Search results</h4>

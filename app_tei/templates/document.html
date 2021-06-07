@@ -1,53 +1,25 @@
-{% extends 'base.html' %}
-
-{% block title %} {{ page_name }} {% endblock %}
-
-{% block content %}
-
-	<div class="container-fluid">
-
-		<!-- <div class="row mb-3">
-			<div class="col about-content my-5">
-				<h3>Document</h3>
-			</div>
-		</div> -->
-
-		<div class="row mb-5">
-			<div class="col">
-				{% for format in formats %}
-					<button type="submit" id={{format + "download-btn"}} class="btn search-btn">
-						<a href={{ "/static/docs/" + filename + "." + format }} download>
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-arrow-down-fill" viewBox="0 0 16 16">
-							  <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm-1 4v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 11.293V7.5a.5.5 0 0 1 1 0z"/>
-							</svg>
-						{{ format }}
-					</button>
-			
-				{% endfor %}
-			</div>
-		</div>
-	
-		<div class="row mb-5">
-			<div class="col-sm-4">
-				<div class="sidebar list-group">
-					<a href="#col2" class="list-group-item list-group-item-action start-item">
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
-						  <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/>
-						</svg>
-						Back to the beginning
-					</a>
-				  		{% for  content in contentList %}
-					  		<a href=#{{loop.index-1}} class="list-group-item list-group-item-action">{{ content | safe }}</a>
-					  	{% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %} {{ filename }} {% endblock %}</title>
+    </head>
+    <body>
+	    <main>
+			<div class="container-fluid">
+				<div class="row mb-5">
+					{% include filename + ".html" ignore missing without context %}
 				</div>
 			</div>
-			<div class="col">
-				<div class="tab-content border" id="nav-tabContent">
-					{% include filename + ".html" ignore missing without context %}
-			    </div>
+			<div class="row" style="position: absolute; bottom: 0; padding: 1em;">
+				<div class="col">
+					{% for format in formats %}
+						<button type="submit" id={{format + "download-btn"}} class="btn btn-download">
+							<a href={{ "/tei_viewer/static/docs/" + filename + "." + format }} download>
+							&#8681; {{ format }}
+						</button>
+					{% endfor %}
+				</div>
 			</div>
-		</div>
-	</div>
-
-
-{% endblock %}
+		</main>
+    </body>
+</html>

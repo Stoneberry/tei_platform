@@ -9,3 +9,5 @@ beautifulsoup4~=4.9.3
 cssutils~=2.2.0
 PyYAML~=5.4.1
 Markdown~=3.3.4
+TEItransformer~=0.0.4
+Flask-SQLAlchemy

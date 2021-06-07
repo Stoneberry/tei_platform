@@ -32,10 +32,9 @@ class Documents(db.Model):
     html_format = db.Column(db.Integer)
     docx_format = db.Column(db.Integer)
     xml_format = db.Column(db.Integer)
+    json_format = db.Column(db.Integer)
     content = db.Column(db.Text)
     inner_id_author = db.Column(db.Text, ForeignKey("authors.inner_id_author"))
     authors = db.relationship(
         "Authors", uselist=False,
         primaryjoin="Authors.inner_id_author==Documents.inner_id_author")
-
-

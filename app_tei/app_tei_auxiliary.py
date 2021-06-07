@@ -83,7 +83,6 @@ def preprocess_string(line, sep=','):
 
 
 def include_page_content(current_dir):
-    os.system("cd ../../static/img")
-    os.system("ln -s ../../../page_content/img/* .")
+    os.chdir("app_tei/static/img")
+    os.system("ln -s ../../../page_content/static/img/* .")
     os.chdir(current_dir)
-

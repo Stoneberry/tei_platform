@@ -1,9 +1,11 @@
 
 PATHS:
-  page_content: "../page_content/about.md"
+  about_content: "page_content/about.md"
+  guide_content: "page_content/guide.md"
 
 FORMATS:
   - 'docx'
   - 'html'
   - 'xml'
+  - 'json'
 

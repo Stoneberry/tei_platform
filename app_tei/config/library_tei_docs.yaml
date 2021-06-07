@@ -3,6 +3,7 @@ PATHS:
   library: "../library"
   library_templates: "../../library"
   library_static: "../../../library"
+  library_docs: "../../../library"
   templates: "templates"
   static: "static/docs"
   dbname: "library.db"
@@ -18,8 +19,8 @@ SQL_QUERIES:
   insert_document: >
       INSERT INTO documents(title, publication_date,
       language, creation_date, inner_id_author, inner_id_document,
-      filename, html_format, xml_format, docx_format, content)
-      SELECT '{}', '{}', '{}', '{}', '{}', '{}', '{}', {}, {}, {}, '{}'
+      filename, html_format, xml_format, docx_format, json_format)
+      SELECT '{}', '{}', '{}', '{}', '{}', '{}', '{}', {}, {}, {}, {}
       WHERE NOT EXISTS
       (SELECT * FROM documents
       WHERE title = '{}' AND publication_date = '{}'
@@ -27,7 +28,7 @@ SQL_QUERIES:
       AND inner_id_author = '{}' AND inner_id_document = '{}'
       AND filename = '{}' AND html_format = {}
       AND xml_format = {} AND docx_format = {}
-      AND content = '{}');
+      AND json_format = {} AND content = NULL);
   insert_author: >
       INSERT INTO authors(author_name, inner_id_author)
       SELECT '{}', '{}'
@@ -47,7 +48,7 @@ SQL_QUERIES:
       language text, publication_date text,
       creation_date text, description text,
       html_format integer, docx_format integer,
-      xml_format integer, inner_id_author text, content text);
+      xml_format integer, json_format integer, inner_id_author text, content text);
   drop_documents: >
       DROP TABLE IF EXISTS documents;
   drop_authors: >
@@ -57,7 +58,7 @@ DB_COLUMNS:
   document: ['titleStmt_title', 'publicationStmt_date',
                'profileDesc_langUsage', 'creation_date',
                'inner_id_author', 'inner_id_document', 'filename',
-               'html_format', 'xml_format', 'docx_format', 'content']
+               'html_format', 'xml_format', 'docx_format', 'json_format']
   author: ['titleStmt_author', 'inner_id_author']
 
 
