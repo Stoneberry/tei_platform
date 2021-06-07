@@ -3,7 +3,7 @@ from collections import defaultdict
 from operator import itemgetter
 
 import TEItransformer as TEIT
-from app_tei.app_tei_auxiliary import *
+from app_tei_auxiliary import *
 
 import sqlite3
 from sqlite3 import Error
