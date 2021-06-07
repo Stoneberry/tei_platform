@@ -17,6 +17,9 @@ The project description and any additional information that needs to be displaye
 
 Additional ```.md``` files have to be named either ```about.md``` or ```guide.md``` for for the corresponding site pages. All the images have to be located in ```page_content/static/img```.
 
+
+![structure](https://github.com/Stoneberry/TEITransformer/blob/main/static/tei_platform.png)
+
 ## Setup
 
 To setup the application, open a command line, select a folder, where you whant your application to be and execute following commands:
@@ -65,8 +68,20 @@ The repository has pre-installed files for demonstration. You can delete them an
 * ```python3 library_setup.py```
 * ```deactivate```
 
+## Examples
 
 
+###  Main page
+
+![tei](https://github.com/Stoneberry/TEITransformer/blob/main/static/main.png)
+
+###  Search
+
+![structure](https://github.com/Stoneberry/TEITransformer/blob/main/static/corpus.png)
+
+###  Document
+
+![structure](https://github.com/Stoneberry/TEITransformer/blob/main/static/document.png)
 
 
 
