@@ -70,7 +70,7 @@ function insertDocument(doc_id, doc_info) {
 
 	constr1 += link + '" target="_blank">' + doc_info['title'] + '</p></div>';
 	constr1 += `<p><span class="fst-italic">` + person + ` Author:</span> ` + doc_info['author_name'] + '</p>';
-	constr1 += `<p><span class="fst-italic">` + date + ` Date: </span>` + doc_info['publish_date'] + '</p>';
+	constr1 += `<p><span class="fst-italic">` + date + ` Date: </span>` + doc_info['creation_date'] + '</p>';
 	constr1 += `<p><span class="fst-italic">` + description + ` Description: </span> ` + doc_info['description'] + '</p></div>';
 
 	if (doc_info["html_format"] === 1) {
